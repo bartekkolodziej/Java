@@ -68,15 +68,17 @@ public class Matrix {
                 buf.append(data[k] + ",");
                 k++;
             }
-            buf.append("] \n");
+            buf.deleteCharAt(buf.length()-1);
+            buf.append("]\n");
         }
-
+        buf.deleteCharAt(buf.length()-1);
+        buf.append("]\n");
         return buf.toString();
     }
 
     void reshape(int newRows,int newCols) { //swap rows and columns
         if (rows * cols != newRows * newCols)
-            throw new RuntimeException(String.format("%d x %d matrix can't be reshaped to %d x %d", rows, cols, newRows, newCols));
+            throw new IllegalArgumentException(String.format("%d x %d matrix can't be reshaped to %d x %d", rows, cols, newRows, newCols));
         this.cols = newCols;
         this.rows = newRows;
         double[][] tmp = this.asArray();
@@ -91,8 +93,8 @@ public class Matrix {
 
     int[] shape(){ //return dimensions of the array
         int[] dimensions = new int[2];
-        dimensions[0] = this.cols;
-        dimensions[1] = this.rows;
+        dimensions[0] = this.rows;
+        dimensions[1] = this.cols;
         return dimensions;
     }
 
@@ -136,7 +138,7 @@ public class Matrix {
     Matrix add(double w){ //add w to every element of this matrix and return new matrix
         Matrix matrix_to_return = new Matrix(this.rows, this.cols);
         for(int i=0; i<this.rows * this.cols; i++){
-            matrix_to_return.data[i] += w;
+            matrix_to_return.data[i] = w + this.data[i];
         }
         return matrix_to_return;
     }
@@ -144,7 +146,7 @@ public class Matrix {
     Matrix sub(double w){ //subtract w form every element of this matrix and return new matrix
         Matrix matrix_to_return = new Matrix(this.rows, this.cols);
         for(int i=0; i<this.rows * this.cols; i++){
-            matrix_to_return.data[i] -= w;
+            matrix_to_return.data[i] = this.data[i] - w;
         }
         return matrix_to_return;
     }
@@ -152,7 +154,7 @@ public class Matrix {
     Matrix mul(double w){ //multiply every element of this matrix by w and return new matrix
         Matrix matrix_to_return = new Matrix(this.rows, this.cols);
         for(int i=0; i<this.rows * this.cols; i++){
-            matrix_to_return.data[i] *= w;
+            matrix_to_return.data[i] = this.data[i] * w;
         }
         return matrix_to_return;
     }
@@ -161,7 +163,7 @@ public class Matrix {
         if(w == 0) throw new RuntimeException(String.format("Div by 0"));
         Matrix matrix_to_return = new Matrix(this.rows, this.cols);
         for(int i=0; i<this.rows * this.cols; i++){
-            matrix_to_return.data[i] += w;
+            matrix_to_return.data[i] = this.data[i] / w;
         }
         return matrix_to_return;
     }
@@ -174,17 +176,17 @@ public class Matrix {
         for(int i=0; i<matrix_to_return.rows; i++){
             for(int j=0; j<matrix_to_return.cols; j++){
                 for(int k=0; k<matrix_to_return.rows; k++)
-                    matrix_to_return.data[i*this.cols + j] += tmp_this[i][j] * tmp_m[j][i];
+                    matrix_to_return.data[i*this.cols + j] += tmp_this[i][k] * tmp_m[k][j];
             }
         }
         return matrix_to_return;
     }
 
     double frobenius(){
-        double frobenius_norm=0;
+        double sum=0;
         for(int i=0; i<this.cols * this.rows; i++)
-            frobenius_norm += Math.sqrt(Math.abs(this.data[i]) * Math.abs(this.data[i]));
-        return frobenius_norm;
+            sum += Math.abs(this.data[i]) * Math.abs(this.data[i]);
+        return Math.sqrt(sum);
     }
 
 
