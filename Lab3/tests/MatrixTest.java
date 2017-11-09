@@ -140,4 +140,10 @@ public class MatrixTest {
         assertEquals(Math.sqrt(29),tmp.frobenius(), 1e-5);
     }
 
+    @org.junit.Test
+    public void sumRows() throws Exception {
+        Matrix m = new Matrix(new double[][]{{1,2,3},{4,5,6},{7,8,9},{1,3,13}});
+        Matrix col = m.sumRows();
+        assertArrayEquals(new double[]{13,18,31},col.data, 1e-5);
+    }
 }

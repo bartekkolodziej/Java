@@ -189,5 +189,22 @@ public class Matrix {
         return Math.sqrt(sum);
     }
 
+    //////// GRUPA C /////////
+
+    Matrix sumRows(){
+        Matrix matrix_to_return = new Matrix(1, this.cols);
+        double[][] tmp = this.asArray();
+        int k=0;
+        for(int i=0; i<this.cols; i++){
+            for(int j=0; j<this.rows; j++) {
+                matrix_to_return.data[k] += tmp[j][i];
+            }
+            k++;
+        }
+        return matrix_to_return;
+    }
+
+    /////////////////////////
+
 
 }
