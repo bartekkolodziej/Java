@@ -44,7 +44,9 @@ public class Document {
                "<html xmlns=\"http://www.w3.org/1999/xhtml\">" + "\n<head>"
        + "\n<title>CV</title>" + "\n<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml;\n" +
                "charset=UTF-8\" />\n" +
-               "</head>" + "<body> \n <h1>" + this.title + "</h1>");
+               "</head>\n" + "<body> \n <h1>" + this.title + "</h1>");
+
+       this.photo.writeHTML(out);
        for(Section s: this.sections) s.writeHTML(out);
        out.printf("\n</body> \n</html>");
     }

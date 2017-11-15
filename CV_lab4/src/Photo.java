@@ -14,6 +14,6 @@ public class Photo {
 
 
     void writeHTML(PrintStream out){
-        out.printf("<img src=\"%s\" alt=\"Smiley face\" height=\"42\" width=\"42\"/>\n",url);
+        out.printf("<img src=\"%s\" alt=\"Smiley face\" height=\"42\" >\n",url);
     }
 }

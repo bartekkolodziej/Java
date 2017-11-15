@@ -8,6 +8,7 @@ public class Section {
     Section(String Section_title){
         this.title = Section_title;
     }
+    Section(){this.title = "";}
 
 
     Section setTitle(String title){
