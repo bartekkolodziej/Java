@@ -1,12 +1,21 @@
 import javax.print.Doc;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.*;
 import java.io.*;
 
+@XmlRootElement
 public class Document {
-    String title;
-    Photo photo;
-    List<Section> sections = new ArrayList<>();
+    @XmlElement String title;
+    @XmlElement Photo photo;
+    @XmlElement(name="section") List<Section> sections = new ArrayList<>();
 
+
+    Document(){this.title = "";}
     Document(String title){
         this.title = title;
     }
@@ -46,9 +55,39 @@ public class Document {
                "charset=UTF-8\" />\n" +
                "</head>\n" + "<body> \n <h1>" + this.title + "</h1>");
 
-       this.photo.writeHTML(out);
+       if(this.photo != null)this.photo.writeHTML(out);
        for(Section s: this.sections) s.writeHTML(out);
        out.printf("\n</body> \n</html>");
+    }
+
+
+    public void write(String fileName) throws JAXBException {
+        try {
+            JAXBContext jc = JAXBContext.newInstance(Document.class);
+            Marshaller m = jc.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            FileWriter writer= new FileWriter(fileName);;
+            m.marshal(this, writer);
+        } catch (JAXBException ex) {
+            ex.printStackTrace();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+    public static Document read(String fileName){
+        try {
+            JAXBContext jc = JAXBContext.newInstance(Document.class);
+            Unmarshaller m = jc.createUnmarshaller();
+            FileReader reader = new FileReader(fileName);
+            return (Document) m.unmarshal(reader);
+        } catch (JAXBException ex) {
+            ex.printStackTrace();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
 
