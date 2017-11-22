@@ -1,8 +1,9 @@
+import javax.xml.bind.JAXBException;
 import java.awt.*;
 import java.io.*;
 
 public class CVBuilder {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, JAXBException {
         Document cv = new Document("Jana Kowalski - CV");
         cv.addPhoto("http://www.publicdomainpictures.net/pictures/130000/velka/clip-art-smiley-face.jpg");
         cv.addSection("Wykształcenie")
@@ -16,10 +17,15 @@ public class CVBuilder {
                                 .addListItem("C++")
                                 .addListItem("Java")
                 );
-        cv.writeHTML(new PrintStream("cv.html","utf-8"));
-        File file = new File("cv.html");
-        Desktop desktop = Desktop.getDesktop();
-        desktop.open(file);
+;
+
+        try {
+            cv.write("cv.xml");
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        Document cv2 = Document.read("cv.xml");
+        cv2.writeHTML(System.out);
 
     }
 }

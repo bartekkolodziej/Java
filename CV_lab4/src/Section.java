@@ -1,8 +1,16 @@
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import java.util.*;
 import java.io.*;
 
 public class Section {
+    @XmlAttribute
     String title;
+    @XmlElements(value= {
+            @XmlElement(name = "paragraph", type = Paragraph.class),
+            @XmlElement(name = "paragraph-with-list", type = ParagraphWithList.class)
+    })
     List<Paragraph> paragraps = new ArrayList<>() ;
 
     Section(String Section_title){

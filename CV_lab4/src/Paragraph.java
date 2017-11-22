@@ -1,6 +1,12 @@
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlValue;
 import java.io.PrintStream;
 
+
 public class Paragraph {
+    @XmlValue
     String content;
 
     Paragraph(){this.content = "";}
