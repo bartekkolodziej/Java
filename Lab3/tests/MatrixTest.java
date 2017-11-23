@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Before;
 
+import java.util.Random;
+
 import static org.junit.Assert.*;
 
 public class MatrixTest {
@@ -142,8 +144,21 @@ public class MatrixTest {
 
     @org.junit.Test
     public void sumRows() throws Exception {
-        Matrix m = new Matrix(new double[][]{{1,2,3},{4,5,6},{7,8,9},{1,3,13}});
-        Matrix col = m.sumRows();
-        assertArrayEquals(new double[]{13,18,31},col.data, 1e-5);
+        Random random = new Random();
+        int m = random.nextInt(100)+1;
+        int n = random.nextInt(100)+1;
+        double delta = random.nextDouble();
+        Matrix mat = new Matrix(m, n);
+        for(int i=0; i< n*m; i++ ) mat.data[i] = delta*i;
+
+        Matrix sumR = mat.sumRows();
+        assertArrayEquals(mat.shape(), new int[]{m,n});
+        assertArrayEquals(sumR.shape(), new int[]{1,n});
+
+        for(int c=0; c< sumR.cols; c++) {
+            assertEquals(sumR.get(0, c), (mat.data[c] + mat.data[m*n-n+c])*2*m, 1e-2);
+        }
+
+
     }
 }
