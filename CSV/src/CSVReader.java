@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,26 +11,32 @@ public class CSVReader {
     BufferedReader reader;
     String delimiter;
     boolean hasHeader;
-
-    CSVReader(String filename,String delimiter){
-
-    }
-
-    // nazwy kolumn w takiej kolejności, jak w pliku
+    String[]current;
     List<String> columnLabels = new ArrayList<>();
-    // odwzorowanie: nazwa kolumny -> numer kolumny
     Map<String, Integer> columnLabelsToInt = new HashMap<>();
 
-    /**
-     * @param filename  - nazwa pliku
-     * @param delimiter - separator pól
-     * @param hasHeader - czy plik ma wiersz nagłówkowy
-     */
+    public CSVReader(String filename) throws FileNotFoundException {
+        this.reader = new BufferedReader(new FileReader(filename));
+    }
+
+    public CSVReader(String filename,String delimiter) throws FileNotFoundException {
+        this(filename);
+        this.delimiter = delimiter;
+    }
 
     public CSVReader(String filename, String delimiter, boolean hasHeader) throws FileNotFoundException {
-        reader = new BufferedReader(new FileReader(filename));
-        this.delimiter = delimiter;
+        this(filename, delimiter);
         this.hasHeader = hasHeader;
+        if (hasHeader) try {
+            parseHeader();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public CSVReader(Reader reader, String delimiter, boolean hasHeader){
+        this.reader = (BufferedReader) reader;
+        this.delimiter = delimiter;
         if (hasHeader) try {
             parseHeader();
         } catch (IOException e) {
@@ -43,42 +46,77 @@ public class CSVReader {
 
 
     void parseHeader() throws IOException {
-        // wczytaj wiersz
         String line = reader.readLine();
         if (line == null) {
             return;
         }
-        // podziel na pola
         String[] header = line.split(delimiter);
-        // przetwarzaj dane w wierszu
         for (int i = 0; i < header.length; i++) {
             columnLabels.add(header[i]);
             columnLabelsToInt.put(header[i], i);
         }
     }
 
-    String[]current;
+
     boolean next() throws IOException {
         String line = reader.readLine();
-        current = line.split(delimiter);
         if(line == null) return false;
+        current = line.split(delimiter);
+
         return true;
     }
 
-    int getInt(String s){
-        return Integer.parseInt(current[columnLabelsToInt.get(s)]);
+    int getInt(String columnLabel){
+            return Integer.parseInt(current[columnLabelsToInt.get(columnLabel)]);
     }
 
     int getInt(int columnIndex){
-        return Integer.parseInt(current[columnIndex]);
+            return Integer.parseInt(current[columnIndex]);
     }
 
-    String get(String name){
-    return "asd";
+    long getLong(int columnIndex){
+        return Long.parseLong(current[columnIndex]);
     }
 
+    long getLong(String columnLabel){
+        return Long.parseLong(current[columnLabelsToInt.get(columnLabel)]);
+    }
 
-    public double getDouble(String fare) {
-        return 2;
+    double getDouble(int columnIndex){
+        return Double.parseDouble(current[columnIndex]);
+    }
+
+    double getDouble(String columnLabel){
+        return Double.parseDouble(current[columnLabelsToInt.get(columnLabel)]);
+    }
+
+    String get(String columnLabel){
+        if(!isMissing(columnLabel))
+            return current[columnLabelsToInt.get(columnLabel)];
+        return "";
+    }
+
+    String get(int columnIndex){
+        if(!isMissing(columnIndex))
+            return current[columnIndex];
+        return "";
+    }
+
+    List<String> getColumnLabels(){
+        return this.columnLabels;
+    }
+    int getRecordLength(){
+        int length = 0;
+        for(String s: current)
+            length += s.length();
+        return length;
+    }
+
+    boolean isMissing(int columnIndex){     // returns true if doesn't exist
+        return current[columnIndex].isEmpty();
+    }
+
+    boolean isMissing(String columnLabel){  // returns true if doesn't exist
+        return current[columnLabelsToInt.get(columnLabel)].isEmpty();
     }
 }
