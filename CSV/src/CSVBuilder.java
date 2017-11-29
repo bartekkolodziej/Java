@@ -7,18 +7,17 @@ import java.util.UnknownFormatConversionException;
 
 public class CSVBuilder {
     public static void main(String[] args) throws IOException {
-        CSVReader reader = new CSVReader("missing-values.csv",";",true);
-        while(reader.next()) {
-            try {
-                int id = reader.getInt("id");
-                String name = reader.get("name");
-                double area = reader.getDouble("area");
+        CSVReader reader = new CSVReader("titanic-part.csv",",(?=([^\"]*\"[^\"]*\")*[^\"]*$)",true);
+        while(reader.next()) try {
+            int id = reader.getInt("PassengerId");
+            String name = reader.get("Name");
+            double fare = reader.getDouble("Fare");
 
-                System.out.printf(Locale.US,"%d %s %f \n", id, name, area);
-            } catch (NumberFormatException | UnknownFormatConversionException e) {
-                e.printStackTrace();
-            }
+            System.out.printf(Locale.US, "%d %s %f \n", id, name, fare);
+        } catch (NumberFormatException | UnknownFormatConversionException e) {
+            e.printStackTrace();
         }
+
 
 
     }

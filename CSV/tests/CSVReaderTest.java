@@ -3,6 +3,7 @@ import org.junit.Before;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StringReader;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -171,15 +172,50 @@ public class CSVReaderTest {
 
     @org.junit.Test
     public void ReadFromString() throws IOException {
-        String text = "a,b,c\n123.4,567.8,91011.12";
+        String text = "a,b,c\n 123.4,567.8,91011.12";
         CSVReader reader = new CSVReader(new StringReader(text),",",true);
-        reader.parseHeader();
+        reader.parseHeader(); // reader.readLine() reads whole text as one line, why?
         reader.next();
         String[] header = {"a","b","c" };
         String[] first_line = {"123.4", "567.8", "91011.12"};
         assertArrayEquals(header, reader.columnLabels.toArray());
         assertArrayEquals(first_line, reader.current);
+    }
 
+    @org.junit.Test
+    public void GetTime() throws IOException {
+        String time = "10:21:11\n3:34\n23:27";
+        CSVReader reader = new CSVReader(new StringReader(time),",",false);
+        reader.next();
+        assertEquals("11:21:10", reader.getTime(0,"ss:mm:HH").toString());
+        reader.next();
+        assertEquals("03:34", reader.getTime(0,"H:mm").toString());
+        reader.next();
+        assertEquals("23:27", reader.getTime(0,"HH:mm").toString());
+    }
+
+    @org.junit.Test
+    public void GetDate() throws IOException {
+        String date = "2010-21-11\n2003-10-01\n1997.07.16";
+        CSVReader reader = new CSVReader(new StringReader(date),",",false);
+        reader.next();
+        assertEquals("2010-11-21", reader.getDate(0,"yyyy-dd-MM").toString());
+        reader.next();
+        assertEquals("2003-10-01", reader.getDate(0,"yyyy-MM-dd").toString());
+        reader.next();
+        assertEquals("1997-07-16", reader.getDate(0,"yyyy.MM.dd").toString());
+    }
+
+    @org.junit.Test
+    public void GetDateTime() throws IOException {
+        String date_time = "2010-21-11 10:21:11\n2003-10-01 3:34\n1997.07.16 23:27";
+        CSVReader reader = new CSVReader(new StringReader(date_time),",",false);
+        reader.next();
+        assertEquals("2010-11-21T10:21:11", reader.getDateTime(0,"yyyy-dd-MM HH:mm:ss").toString());
+        reader.next();
+        assertEquals("2003-10-01T03:34", reader.getDateTime(0,"yyyy-MM-dd H:mm").toString());
+        reader.next();
+        assertEquals("1997-07-16T23:27", reader.getDateTime(0,"yyyy.MM.dd HH:mm").toString());
     }
 
 }
