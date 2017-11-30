@@ -172,9 +172,8 @@ public class CSVReaderTest {
 
     @org.junit.Test
     public void ReadFromString() throws IOException {
-        String text = "a,b,c\n 123.4,567.8,91011.12";
+        String text = "a,b,c\n123.4,567.8,91011.12";
         CSVReader reader = new CSVReader(new StringReader(text),",",true);
-        reader.parseHeader(); // reader.readLine() reads whole text as one line, why?
         reader.next();
         String[] header = {"a","b","c" };
         String[] first_line = {"123.4", "567.8", "91011.12"};

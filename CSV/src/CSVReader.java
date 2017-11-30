@@ -21,18 +21,19 @@ public class CSVReader {
     }
 
     public CSVReader(String filename, String delimiter) throws FileNotFoundException {
-        this(filename);
-        this.delimiter = delimiter;
+        this(filename,delimiter,true);
+//        this.delimiter = delimiter;
     }
 
-    public CSVReader(String filename, String delimiter, boolean hasHeader) throws FileNotFoundException {
-        this(filename, delimiter);
-        this.hasHeader = hasHeader;
-        if (hasHeader) try {
-            parseHeader();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public CSVReader(String filename, String delimite, boolean hasHeader) throws FileNotFoundException {
+        this(new FileReader(filename),delimite,hasHeader);
+//        this(filename, delimiter);
+//        this.hasHeader = hasHeader;
+//        if (hasHeader) try {
+//            parseHeader();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public CSVReader(Reader reader, String delimiter, boolean hasHeader) {
@@ -68,7 +69,9 @@ public class CSVReader {
     }
 
     int getInt(String columnLabel) {
-        return Integer.parseInt(current[columnLabelsToInt.get(columnLabel)]);
+        if (!isMissing(columnLabel))
+            return Integer.parseInt(current[columnLabelsToInt.get(columnLabel)]);
+        return 0;
     }
 
     int getInt(int columnIndex) {
@@ -88,7 +91,9 @@ public class CSVReader {
     }
 
     double getDouble(String columnLabel) {
-        return Double.parseDouble(current[columnLabelsToInt.get(columnLabel)]);
+        if(!isMissing(columnLabel))
+            return Double.parseDouble(current[columnLabelsToInt.get(columnLabel)]);
+        return 0;
     }
 
     String get(String columnLabel) {
@@ -115,11 +120,13 @@ public class CSVReader {
     }
 
     boolean isMissing(int columnIndex) {     // returns true if doesn't exist
-        return current[columnIndex].isEmpty();
+        return columnIndex >= current.length || current[columnIndex].isEmpty() ;
     }
 
     boolean isMissing(String columnLabel) {  // returns true if doesn't exist
-        return current[columnLabelsToInt.get(columnLabel)].isEmpty();
+        Integer x = columnLabelsToInt.get(columnLabel);
+        if(x == null) return true;
+        return isMissing(x);
     }
 
     public LocalTime getTime(int columnIndex, String pattern){
