@@ -117,12 +117,6 @@ public class CSVReaderTest {
         assertEquals(10, missing_records);
     }
 
-    @org.junit.Test(expected = NumberFormatException.class)
-    public void ReadFileWithMissingRecords() throws IOException {
-        CSVReader reader = new CSVReader("missing-values.csv",";",true);
-        while(reader.next())
-            reader.getInt("parent");
-    }
 
     @org.junit.Test
     public void ReferenceToMissingStringRecords() throws IOException {
@@ -132,43 +126,43 @@ public class CSVReaderTest {
         assertEquals("",reader.get(1));
     }
 
-
-    @org.junit.Test(expected = NumberFormatException.class)
+    @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsInteger1() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        reader.getInt(4);
+        assertEquals(0,reader.getInt(4));
     }
-    @org.junit.Test(expected = NumberFormatException.class)
+    @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsInteger2() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        reader.getInt("population");
+        assertEquals(0, reader.getInt("population"));
     }
-    @org.junit.Test(expected = NumberFormatException.class)
+    @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsDouble1() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        reader.getDouble(4);
+        assertEquals(0, reader.getDouble(4), 1e-5);
     }
-    @org.junit.Test(expected = NumberFormatException.class)
+    @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsDouble2() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        reader.getDouble("population");
+        assertEquals(0, reader.getDouble("population"), 1e-5);
     }
-    @org.junit.Test(expected = NumberFormatException.class)
+    @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsLong1() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        reader.getLong(4);
+        assertEquals(0, reader.getLong(4), 1e-5);
     }
-    @org.junit.Test(expected = NumberFormatException.class)
+    @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsLong2() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        reader.getLong("population");
+        assertEquals(0, reader.getLong("population"), 1e-5);
     }
+
 
     @org.junit.Test
     public void ReadFromString() throws IOException {
@@ -202,7 +196,7 @@ public class CSVReaderTest {
         reader.next();
         assertEquals("2003-10-01", reader.getDate(0,"yyyy-MM-dd").toString());
         reader.next();
-        assertEquals("1997-07-16", reader.getDate(0,"yyyy.MM.dd").toString());
+        assertEquals("1111-11-11", reader.getDate(3,"yyyy.MM.dd").toString());
     }
 
     @org.junit.Test
