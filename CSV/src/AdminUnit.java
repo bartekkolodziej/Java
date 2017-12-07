@@ -11,14 +11,15 @@ public class AdminUnit {
     AdminUnit parent;
     List<AdminUnit> children = new ArrayList<>();
 
-    BoundingBox bbox = new BoundingBox();
+    BoundingBox bbox;
 
-    AdminUnit(String name,int adminLevel, double population, double area, double density){
+    AdminUnit(String name,int adminLevel, double population, double area, double density, double x1, double y1, double x2, double y2){
         this.name = name;
         this.adminLevel = adminLevel;
         this.population = population;
         this.area = area;
         this.density = density;
+        this.bbox = new BoundingBox(x1, y1, x2, y2);
     }
 
 
