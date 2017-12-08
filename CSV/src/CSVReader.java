@@ -87,13 +87,13 @@ public class CSVReader {
     double getDouble(int columnIndex) {
         if(!isMissing(columnIndex))
             return Double.parseDouble(current[columnIndex]);
-        return 0;
+        return Double.NaN;
     }
 
     double getDouble(String columnLabel) {
         if(!isMissing(columnLabel))
             return Double.parseDouble(current[columnLabelsToInt.get(columnLabel)]);
-        return 0;
+        return Double.NaN;
     }
 
     String get(String columnLabel) {

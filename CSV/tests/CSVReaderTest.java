@@ -142,13 +142,13 @@ public class CSVReaderTest {
     public void ReferenceToMissingnNumericalRecordsDouble1() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        assertEquals(0, reader.getDouble(4), 1e-5);
+        assertEquals(Double.NaN, reader.getDouble(4), 1e-5);
     }
     @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsDouble2() throws IOException {
         CSVReader reader = new CSVReader("missing-values.csv",";",true);
         for(int i=0; i < 2; i++) reader.next();      // acces second row in file
-        assertEquals(0, reader.getDouble("population"), 1e-5);
+        assertEquals(Double.NaN, reader.getDouble("population"), 1e-5);
     }
     @org.junit.Test
     public void ReferenceToMissingnNumericalRecordsLong1() throws IOException {
