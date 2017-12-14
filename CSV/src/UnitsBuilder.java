@@ -7,8 +7,8 @@ public class UnitsBuilder {
         AdminUnitList unitlist = new AdminUnitList();
         unitlist.read("admin-units.csv");
         unitlist.fixAllMissingValues();
-        AdminUnitList sorted = unitlist.sortInplaceByPopulation();
-        sorted.list(System.out, 1, 100);
+
+        unitlist.sortInplaceByName().filter(a->a.name.startsWith("K"),3, 5).list(System.out);
 
 
     }

@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.*;
+import java.util.function.Predicate;
 
 
 public class AdminUnitList {
@@ -170,7 +171,40 @@ public class AdminUnitList {
 
     AdminUnitList sortInplaceByPopulation(){
         units.sort((o1, o2) -> Double.compare(o1.population, o2.population));
-    return this;
+        return this;
     }
+
+
+    AdminUnitList sortInplace(Comparator<AdminUnit> cmp){
+        units.sort(cmp);
+        return this;
+    }
+
+    AdminUnitList sort(Comparator<AdminUnit> cmp){
+        AdminUnitList tmp = new AdminUnitList();
+        tmp.units.addAll(this.units);
+        tmp.sortInplace(cmp);
+        return tmp;
+    }
+
+    AdminUnitList filter(Predicate<AdminUnit> pred){
+        AdminUnitList tmp = new AdminUnitList();
+        tmp.units.addAll(this.units);
+        tmp.units.removeIf(pred.negate());
+        return tmp;
+    }
+
+    AdminUnitList filter(Predicate<AdminUnit> pred, int limit){
+        return new AdminUnitList(this.filter(pred).units.subList(0,limit));
+    }
+
+
+    AdminUnitList filter(Predicate<AdminUnit> pred, int offset, int limit){
+        return new AdminUnitList(this.filter(pred).units.subList(offset,limit + offset));
+    }
+
+
+
+
 }
 
