@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fae5690c-feab-4007-bbe1-90c2350362d6" name="Default" comment="All tests almost completed, CSVReader works only with BufferedReader">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/EmptyBoundingBox.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AdminUnitListTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/BoundingBoxTest.java" />
+    <list default="true" id="fae5690c-feab-4007-bbe1-90c2350362d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminUnit.java" afterPath="$PROJECT_DIR$/src/AdminUnit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminUnitList.java" afterPath="$PROJECT_DIR$/src/AdminUnitList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BoundingBox.java" afterPath="$PROJECT_DIR$/src/BoundingBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSVReader.java" afterPath="$PROJECT_DIR$/src/CSVReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UnitsBuilder.java" afterPath="$PROJECT_DIR$/src/UnitsBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CSVReaderTest.java" afterPath="$PROJECT_DIR$/tests/CSVReaderTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +19,8 @@
       <file leaf-file-name="CSVReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSVReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+            <state relative-caret-position="0">
+              <caret line="101" column="18" lean-forward="false" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,7 +31,7 @@
       <file leaf-file-name="AdminUnit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AdminUnit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="476">
               <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -50,21 +43,40 @@
       <file leaf-file-name="AdminUnitList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AdminUnitList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+            <state relative-caret-position="433">
+              <caret line="171" column="74" lean-forward="false" selection-start-line="171" selection-start-column="74" selection-end-line="171" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#196#197#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#2759#2760#0" expanded="true" />
+                <element signature="e#5886#5887#0" expanded="true" />
+                <element signature="e#5943#5944#0" expanded="true" />
+                <element signature="e#6228#6229#0" expanded="true" />
+                <element signature="e#6299#6300#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminUnitListTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminUnitListTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/AdminUnitListTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="45" column="85" lean-forward="false" selection-start-line="45" selection-start-column="85" selection-end-line="45" selection-end-column="85" />
+            <state relative-caret-position="221">
+              <caret line="17" column="109" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="17" selection-end-column="109" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitsBuilder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UnitsBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="65" lean-forward="false" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/BoundingBox.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,10 +146,10 @@
         <option value="$PROJECT_DIR$/tests/BoundingBoxTest.java" />
         <option value="$PROJECT_DIR$/tests/CSVReaderTest.java" />
         <option value="$PROJECT_DIR$/src/AdminUnit.java" />
-        <option value="$PROJECT_DIR$/src/UnitsBuilder.java" />
-        <option value="$PROJECT_DIR$/src/AdminUnitList.java" />
         <option value="$PROJECT_DIR$/src/BoundingBox.java" />
         <option value="$PROJECT_DIR$/tests/AdminUnitListTest.java" />
+        <option value="$PROJECT_DIR$/src/AdminUnitList.java" />
+        <option value="$PROJECT_DIR$/src/UnitsBuilder.java" />
       </list>
     </option>
   </component>
@@ -169,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,11 +189,20 @@
               <item name="CSV" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSV" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CSV" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSV" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSV" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSV" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="Scope" />
@@ -215,7 +237,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AdminUnitListTest">
+  <component name="RunManager" selected="Application.UnitsBuilder">
     <configuration name="AdminUnitListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="CSV" />
@@ -244,26 +266,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AdminUnitListTest" />
       <option name="METHOD_NAME" value="finUnitAndNeighbors" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="AdminUnitListTest.getNeighborsForAllUnits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="CSV" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AdminUnitListTest" />
-      <option name="METHOD_NAME" value="getNeighborsForAllUnits" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -315,6 +317,20 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration name="UnitsBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="UnitsBuilder" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CSV" />
+      <envs />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -398,19 +414,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest.getNeighborsForAllUnits" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest.finUnitAndNeighbors" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CSVReaderTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BoundingBoxTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest.finUnitAndNeighbors" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CSVReaderTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BoundingBoxTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.UnitsBuilder" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.BoundingBoxTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CSVReaderTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest.finUnitAndNeighbors" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest.getNeighborsForAllUnits" />
+        <item index="0" class="java.lang.String" itemvalue="Application.UnitsBuilder" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BoundingBoxTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CSVReaderTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AdminUnitListTest.finUnitAndNeighbors" />
       </list>
     </recent_temporary>
   </component>
@@ -435,7 +451,8 @@
       <workItem from="1512224601176" duration="6646000" />
       <workItem from="1512659679655" duration="16603000" />
       <workItem from="1512727650360" duration="17972000" />
-      <workItem from="1512755869588" duration="647000" />
+      <workItem from="1512755869588" duration="736000" />
+      <workItem from="1513248709997" duration="1311000" />
     </task>
     <task id="LOCAL-00001" summary="All tests almost completed, CSVReader works only with BufferedReader">
       <created>1511900803939</created>
@@ -444,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511900803939</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Lab8 - finished, added some tests">
+      <created>1512756600065</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1512756600065</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -480,7 +504,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94922000" />
+    <option name="totallyTimeSpent" value="96322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -522,7 +546,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="All tests almost completed, CSVReader works only with BufferedReader" />
-    <option name="LAST_COMMIT_MESSAGE" value="All tests almost completed, CSVReader works only with BufferedReader" />
+    <MESSAGE value="Lab8 - finished, added some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab8 - finished, added some tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -534,16 +559,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AdminUnitList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CSVReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -570,6 +585,13 @@
           <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#5886#5887#0" expanded="true" />
+            <element signature="e#5943#5944#0" expanded="true" />
+            <element signature="e#6228#6229#0" expanded="true" />
+            <element signature="e#6299#6300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,6 +632,13 @@
           <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#5886#5887#0" expanded="true" />
+            <element signature="e#5943#5944#0" expanded="true" />
+            <element signature="e#6228#6229#0" expanded="true" />
+            <element signature="e#6299#6300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -640,6 +669,13 @@
           <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#5886#5887#0" expanded="true" />
+            <element signature="e#5943#5944#0" expanded="true" />
+            <element signature="e#6228#6229#0" expanded="true" />
+            <element signature="e#6299#6300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -678,9 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,6 +733,13 @@
           <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#5886#5887#0" expanded="true" />
+            <element signature="e#5943#5944#0" expanded="true" />
+            <element signature="e#6228#6229#0" expanded="true" />
+            <element signature="e#6299#6300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -736,9 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,9 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,9 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,9 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,9 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -838,9 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,27 +924,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UnitsBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoundingBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AdminUnit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="476">
           <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -932,29 +936,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSVReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="101" column="18" lean-forward="false" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdminUnitList.java">
+    <entry file="file://$PROJECT_DIR$/src/BoundingBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/AdminUnitListTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="45" column="85" lean-forward="false" selection-start-line="45" selection-start-column="85" selection-end-line="45" selection-end-column="85" />
+        <state relative-caret-position="221">
+          <caret line="17" column="109" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="17" selection-end-column="109" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminUnitList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="171" column="74" lean-forward="false" selection-start-line="171" selection-start-column="74" selection-end-line="171" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#5886#5887#0" expanded="true" />
+            <element signature="e#5943#5944#0" expanded="true" />
+            <element signature="e#6228#6229#0" expanded="true" />
+            <element signature="e#6299#6300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UnitsBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="65" lean-forward="false" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
