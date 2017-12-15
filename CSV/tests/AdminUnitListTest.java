@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 import static org.junit.Assert.*;
@@ -47,14 +50,17 @@ public class AdminUnitListTest {
     }
 
     @Test
-    public void finUnitAndNeighbors() throws Exception{
+    public void findUnitAndNeighbors() throws Exception{
         AdminUnitList unitlist = new AdminUnitList();
         unitlist.read("admin-units.csv");
         unitlist.fixAllMissingValues();
         AdminUnit Brzyna = unitlist.selectByName("Brzyna");
-        System.out.print(Brzyna.toString() + "Neighbors:\n\n");
         AdminUnitList neighbors = unitlist.getNeighbors(Brzyna, 4);
-        neighbors.list(System.out);
+
+        List<String> neighborNames = new ArrayList();
+        for(AdminUnit au: neighbors.units)
+            neighborNames.add(au.name);
+        assertTrue(neighborNames.containsAll(Arrays.asList("Jazowsko", "Łącko", "Maszkowice", "Obidza")));
     }
 
 }

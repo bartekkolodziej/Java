@@ -189,8 +189,12 @@ public class AdminUnitList {
 
     AdminUnitList filter(Predicate<AdminUnit> pred){
         AdminUnitList tmp = new AdminUnitList();
-        tmp.units.addAll(this.units);
-        tmp.units.removeIf(pred.negate());
+        for(AdminUnit au: this.units)
+            if(pred.test(au))
+                tmp.units.add(au);
+
+       // tmp.units.removeIf(pred.negate()); mozna i tak
+
         return tmp;
     }
 

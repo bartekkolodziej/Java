@@ -44,13 +44,8 @@ public class AdminUnitQuery {
         return this;
     }
 
-    /**
-     * Wykonuje zapytanie i zwraca wynikową listę
-     * @return przefiltrowana i opcjonalnie posortowana lista (uwzględniamy także offset/limit)
-     */
+
     AdminUnitList execute(){
-        AdminUnitList sorted = src.sort(cmp);
-        AdminUnitList filtered = src.filter(p, offset, limit);
-        return filtered;
+        return src.sort(cmp).filter(p, offset, limit);
     }
 }
