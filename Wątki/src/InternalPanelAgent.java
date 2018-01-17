@@ -28,9 +28,9 @@ public class InternalPanelAgent extends Thread {
             if(ic.toFloor==elevatorCar.getFloor())continue;
 
             if(ic.toFloor > elevatorCar.getFloor())
-                ElevatorStops.get().setLiftStopUp(ic.toFloor);
-            if(ic.toFloor < elevatorCar.getFloor())
                 ElevatorStops.get().setLiftStopDown(ic.toFloor);
+            if(ic.toFloor < elevatorCar.getFloor())
+                ElevatorStops.get().setLiftStopUp(ic.toFloor);
         }
     }
 

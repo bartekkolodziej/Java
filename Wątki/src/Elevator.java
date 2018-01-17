@@ -33,6 +33,10 @@ public class Elevator {
         init();
         makeExternalCall(4,false);
         Thread.currentThread().sleep(100);
+        makeExternalCall(6,true);
+        Thread.currentThread().sleep(100);
+        makeInternalCall(8);
+        Thread.currentThread().sleep(100);
         makeInternalCall(2);
         Thread.currentThread().sleep(100);
 
